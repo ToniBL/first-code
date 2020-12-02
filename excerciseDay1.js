@@ -9,7 +9,7 @@ function logType(arg) {
         console.log("undefined!");
     } else if (typeof arg === "boolean") {
         console.log("boolean!");
-    } else if (typeof arg === "bigint!") {
+    } else if (typeof arg === "bigint") {
         console.log("bigint!");
     } else if (typeof arg === "number") {
         console.log("number!");
@@ -19,25 +19,10 @@ function logType(arg) {
         console.log("array!");
     } else if (typeof arg === "object") {
         console.log("object!");
-    } else console.log("I have no idea");
-}
-
-function logNaN(arg) {
-    if (arg !== arg) {
-        console.log("not a number");
+    } else {
+        console.log("I have no idea");
     }
 }
-
-function logNull(arg) {
-    if (arg === null) {
-        console.log("null");
-    } else console.log("not null");
-}
-
-/*  } else if (Number.isNaN(arg)) {
-        console.log("not a number!"); 
-        
-    why is this not working?*/
 
 // 2 -> the part in the while loop i didnt quite get my head around. Peter explained in slack, but i still have troubles following
 

@@ -13,11 +13,18 @@ header {
     border: dotted black 1px;
     height: 70px;
 }
-#logo {
+/* #logo {
+    background-image: url("adobo-code/CSS/assets/spiced.png");
     height: 50px;
     width: 50px;
     background-color: orange;
     float: left;
+} */
+
+img {
+    float: left;
+    width: 25%;
+    height: 25%;
 }
 
 #menu {
@@ -30,7 +37,8 @@ header {
 .container {
     width: 80vw;
     height: 80vh;
-    background-color: tomato;
+    background-image: url("assets/spices.jpg");
+    background-size: cover;
     border: solid black 1px;
     position: relative;
 }
