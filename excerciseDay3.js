@@ -1,4 +1,15 @@
-// 3.
+// 3. first solution only works when not inside the iife
+
+(function () {
+    function getLessThanZero(arr) {
+        var negativ = arr.filter(function (num) {
+            if (num < 0) {
+                return true;
+            }
+        });
+        return negativ;
+    }
+})();
 
 function getLessThanZero(arr) {
     return arr.filter(function (negativ) {
@@ -11,8 +22,8 @@ function getLessThanZero(arr) {
 // 2.
 (function () {
     function flip(arr) {
-        arrCopy = arr.slice();
-        arrReverse = arrCopy.reverse();
+        var arrCopy = arr.slice();
+        var arrReverse = arrCopy.reverse();
         return arrReverse;
     }
 })();
@@ -21,8 +32,12 @@ function getLessThanZero(arr) {
 //! first if else to check if it is an array.isArray / for array for loop, for object for in
 function each(arrOb, callBack) {
     if (isArray(arrOb) == true) {
-        for (key in arrOb) {
-            key(callBack);
+        for (i = 0; i < arrOb.length; i++) {
+            
         }
+        
+    } else {
+         for (key in arrOb) {
+            key(callBack);
     }
 }
