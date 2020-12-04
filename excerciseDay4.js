@@ -34,7 +34,24 @@ Object.prototype.getArea = function () {
 // store in new array
 // convert new array to string
 
+// loop string 
+// check characters case mit regular expressio A-Z
+// check character case mit regular expressions a-z https://stackoverflow.com/questions/49922278/javascript-checking-if-a-letter-is-an-uppercase
+
 function invertCase(str) {
-    var newStr = str.split();
-    return newStr;
+    for (car in str) {
+        if (car === toUpperCase)
+    }
 }
+
+
+
+const sentence = "das ist der Test";
+sentenceArr = sentence.split('')
+const upperCaseRegex = /[A-Z]/g; 
+for (char in sentenceArr) {
+     if (char.match(/[A-Z]/g))
+ }
+
+
+ if (char.match(upperCaseRegex) {...}

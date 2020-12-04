@@ -38,9 +38,30 @@ function waitThenRun(fn) {
                 if (num >= 1000000) {
                     return;
                 } else {
-                    multi(num * 10);
+                    return multi(num * 10);
                 }
             }
+        }
+    }
+})();
+
+(function () {
+    function multi(num) {
+        console.log(num);
+        if (num >= 1000000) {
+            return;
+        } else {
+            return multi(num * 10);
+        }
+    }
+
+    function count(num) {
+        if (num <= 0 || isNaN(num)) {
+            return "ERROR";
+        } else if (num >= 1000000) {
+            return num;
+        } else {
+            return multi(num);
         }
     }
 })();
