@@ -1,11 +1,15 @@
 // 1.
+
 function Rectangle (width, height) {
     getArea: function () {
         return width * height;
     }
 }
-
 function Square (num) {
-    return num*num;
+    Rectangle.call(this, getArea)
 }
 
+
+
+Rectangle.prototype.getArea = function () {
+    return width * height;}

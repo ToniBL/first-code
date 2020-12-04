@@ -1,0 +1,21 @@
+h1 {
+    color: pink;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+#head {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 150px;
+    width: 150px;
+    border: solid 2px blue;
+    border-radius: 50%;
+}
