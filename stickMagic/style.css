@@ -6,10 +6,6 @@ h1 {
     box-sizing: border-box;
 }
 
-body {
-    position: relative;
-}
-
 #head {
     position: absolute;
     top: 100px;
@@ -18,4 +14,21 @@ body {
     width: 150px;
     border: solid 2px blue;
     border-radius: 50%;
+}
+
+#body {
+    position: absolute;
+    top: 250px;
+    left: 175px;
+    height: 250px;
+    width: 5px;
+    background-color: gold;
+}
+
+.arm {
+    position: absolute;
+    top: 320px;
+    left: 175px;
+    height: 5px;
+    width: 200px;
 }
