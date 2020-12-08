@@ -1,7 +1,7 @@
 // 1.
 function myFn(sel) {
     var styled = document.querySelectorAll(sel);
-    for (i = 0; i < styled.length; i++) {
+    for (var i = 0; i < styled.length; i++) {
         styled[i].style.fontWeight = "bold";
         styled[i].style.fontStyle = "italic";
         styled[i].style.textDecoration = "underline";
@@ -13,7 +13,7 @@ function myFn(sel) {
 function toArr(str) {
     var realArr = [];
     var likeArr = document.getElementsByClassName(str);
-    for (i = 0; i < likeArr.length; i++) {
+    for (var i = 0; i < likeArr.length; i++) {
         realArr.push(likeArr[i]);
     }
     console.log(realArr);
