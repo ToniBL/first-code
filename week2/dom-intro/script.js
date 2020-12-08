@@ -1,14 +1,55 @@
-// 1. grab element by id
+console.log("sanity check!");
 
-var mainHeading = document.getElementById("main-title");
-console.log('mainHeading: ', mainHeading);
+var board = document.getElementsByClassName("board")[0];
+console.log("board: ", board);
+var racers = document.getElementsByClassName("racer");
+console.log("racers: ", racers);
 
-// 2. querySelector target HTML element on basis of any css selector like tag, class, id, selector specific # or . musst be added in query
-// it will return first match of tag (e.a. first div of possibly many), 
+var boostBtn = document.getElementById("boost-button");
 
-var elem = document.querySelector('.first-section')
-console.log("elem: ", elem);
+var leftRacingCar = 0;
+var leftMotorbike = 0;
+var leftPoliceCar = 0;
+var leftTractor = 0;
 
-// 3. querySecetorAll to grab more than one element 
-// returns array-like object [even if there is only one!], can be looped ect. 
+function getRandomNumber() {
+    // gets us a random number between 0 and 50;
+    return Math.floor(Math.random() * 51);
+}
 
+function getRandomColourNumber() {
+    return Math.floor(Math.random() * 256);
+}
+
+document.addEventListener("keydown", function () {
+    // goal is to create a string like this
+    // rgb(0, 223, 235)
+    var r = getRandomColourNumber();
+    var g = getRandomColourNumber();
+    var b = getRandomColourNumber();
+    console.log("r, g, b: ", r, g, b);
+    var randomColour = "rgb(" + r + "," + g + "," + b + ")";
+    console.log("randomColour: ", randomColour);
+    board.style.background = randomColour;
+});
+
+boostBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    leftRacingCar += 100;
+    racers[0].style.left = leftRacingCar + "px";
+});
+
+document.addEventListener("click", function () {
+    console.log("clicked on the board!!!");
+    // leftRacingCar = leftRacingCar + getRandomNumber();
+    // the above line can be re-written as so.
+    leftRacingCar += getRandomNumber();
+    leftMotorbike += getRandomNumber();
+    leftPoliceCar += getRandomNumber();
+    leftTractor += getRandomNumber();
+    racers[0].style.left = leftRacingCar + "px";
+    racers[1].style.left = leftMotorbike + "px";
+    racers[2].style.left = leftPoliceCar + "px";
+    racers[3].style.left = leftTractor + "px";
+    console.log("leftRacingCar: ", leftRacingCar);
+});
