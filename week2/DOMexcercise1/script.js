@@ -1,6 +1,7 @@
 console.log("test");
 
-// 1: it works only on x, not y axis and i can't see why
+// 1:
+
 var square = document.querySelector("div");
 console.log(square);
 var x;
