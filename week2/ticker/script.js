@@ -11,6 +11,15 @@
             headlines.appendChild(links[0]);
         }
 
+        /* code coy from solution 
+        headlines.addEventListener("mouseenter", function (e) {
+            cancelAnimationFrame(headlines.style.left);
+        });
+
+        headlines.addEventListener("mouseleave", function () {
+            move();
+        });
+*/
         requestAnimationFrame(move);
     }
 
