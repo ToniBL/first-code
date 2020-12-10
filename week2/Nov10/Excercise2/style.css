@@ -1,7 +1,11 @@
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    justify-content: space-between;
+    background-color: grey;
 }
 
 header {
@@ -12,15 +16,10 @@ header {
 footer {
     background-color: pink;
     height: 30px;
-    order: 1;
 }
 
 main {
-    display: flex;
-    border: solid black 1px;
-    flex-grow: 1;
-    background-color: grey;
-    justify-content: center;
+    align-self: center;
 }
 
 img {

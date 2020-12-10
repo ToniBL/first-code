@@ -64,6 +64,7 @@ footer {
 .text {
     width: 50%;
     margin-bottom: 20px;
+    float: left;
 }
 
 h2 {
@@ -76,20 +77,14 @@ p {
     font-weight: 550;
 }
 
-.features,
-.taste {
-    float: left;
-}
-
-.service,
-.limits {
-    float: right;
-}
-
 footer img {
-    float: left;
+    position: absolute;
     height: 35px;
     margin: 15px;
+}
+
+.content {
+    margin-left: 60px;
 }
 
 /* overlay */
@@ -188,11 +183,6 @@ footer img {
         height: 30px;
         width: 200px;
         font-size: 20px;
-    }
-
-    footer {
-        padding: 5px;
-        height: 400px;
     }
 
     .text {
