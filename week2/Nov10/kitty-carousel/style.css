@@ -19,12 +19,32 @@
 #kitties img.onscreen {
     transform: translateX(0%);
     transition-property: transform;
-    transition-duration: 3s;
+    transition-duration: 1.5s;
 }
 
 #kitties img.exit-left {
     transform: translateX(-100%);
     transition-property: transform;
-    transition-duration: 3s;
+    transition-duration: 1.5s;
     z-index: -1;
+}
+
+#dots {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    bottom: 30px;
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: solid white 2px;
+    margin: 5px;
+}
+
+.on {
+    background-color: white;
 }
