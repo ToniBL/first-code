@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: papayawhip;
+    font-family: "Times New Roman", Times, serif;
+}
+/* header */
+header {
+    padding: 10px;
+    background-color: #fff;
+    height: 60px;
+}
+
+#logo {
+    float: left;
+    height: 40px;
+}
+
+#nav {
+    height: 40px;
+    float: right;
+    cursor: pointer;
+}
+/* mid section */
+.container {
+    height: 65vh;
+    background-image: url("assets/spices.jpg");
+    background-size: cover;
+    background-position: top;
+    filter: brightness(80%);
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 45px;
+    font-style: italic;
+    position: relative;
+    top: 35%;
+}
+
+button {
+    height: 40px;
+    width: 225px;
+    background-color: yellow;
+    border: solid orange 4px;
+    font-size: 20px;
+    color: orange;
+    position: relative;
+    top: 40%;
+    border-radius: 25px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+footer {
+    height: 27vh;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.text {
+    width: 50%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 550;
+}
+
+footer img {
+    position: absolute;
+    height: 35px;
+    margin: 15px;
+}
+
+.content {
+    margin-left: 60px;
+}
+
+/*modal*/
+.modal {
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    right: 20%;
+    width: 60%;
+    padding: 20px;
+    border-radius: 5%;
+    background-color: white;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#exitModal {
+    position: absolute;
+    right: 20px;
+    color: darkslategrey;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#overlayMod {
+    top: 0px;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkslategrey;
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+/* overlay */
+#overlay {
+    top: 0px;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkslategrey;
+    opacity: 0.7;
+    visibility: hidden;
+}
+
+.vis {
+    visibility: visible !important;
+    z-index: 50;
+}
+
+/* side-nav*/
+
+#side-nav {
+    position: absolute;
+    top: 0px;
+    right: -30%;
+    width: 30%;
+    height: 100vh;
+    padding: 30px;
+    background-color: white;
+    color: blue;
+    font-size: 25px;
+    visibility: hidden;
+    transition: transform 2s;
+    z-index: 100;
+}
+
+.on {
+    visibility: visible !important;
+    transform: translateX(-100%);
+}
+
+.link {
+    padding: 20px;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+#close {
+    position: absolute;
+    right: 20px;
+    color: darkslategrey;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#logout a {
+    margin-left: 20px;
+    margin-top: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+    #logo img {
+        width: 30%;
+        height: 30%;
+    }
+
+    #menu {
+        height: 12%;
+        width: 12%;
+    }
+
+    .container {
+        height: 60vh;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: bolder;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    button {
+        height: 30px;
+        width: 200px;
+        font-size: 20px;
+    }
+
+    .text {
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(22, 24, 24);
+        color: white;
+    }
+
+    header {
+        background-color: rgb(22, 24, 24);
+        color: white;
+    }
+
+    .container {
+        filter: brightness(30%);
+    }
+
+    footer {
+        background-color: rgb(22, 24, 24);
+        color: white;
+        filter: brightness(70%);
+    }
+}
