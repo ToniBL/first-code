@@ -3,7 +3,6 @@
     var links = document.getElementsByTagName("a");
     var moveHeadline = document.querySelector(".headlines");
     var left = moveHeadline.offsetLeft;
-
     function move() {
         left--;
         headlines.style.left = left + "px";
@@ -12,6 +11,15 @@
             headlines.appendChild(links[0]);
         }
 
+        /* code coy from solution 
+        headlines.addEventListener("mouseenter", function (e) {
+            cancelAnimationFrame(headlines.style.left);
+        });
+
+        headlines.addEventListener("mouseleave", function () {
+            move();
+        });
+*/
         requestAnimationFrame(move);
     }
 
