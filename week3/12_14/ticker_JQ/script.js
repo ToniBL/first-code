@@ -19,7 +19,10 @@
     function move() {
         left.left--;
         console.log(left.left);
-        if (left.left <= links.eq(0).width()) {
+        headlines.css({
+            left: left.left + "px",
+        });
+        if (left.left <= -links.eq(0).width()) {
             left.left += links.eq(0).width();
             headlines.append(links(0));
         }
