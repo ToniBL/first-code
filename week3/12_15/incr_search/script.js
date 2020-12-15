@@ -14,6 +14,7 @@
             if (countries[i].toLowerCase().indexOf(inputVal) === 0) {
                 console.log("found a match:", countries[i]);
                 matchResults.push(countries[i]);
+                resultsContainer.show();
                 // limit your results to a maximum of four matching countries
                 if (matchResults.length === 4) {
                     break;
@@ -24,8 +25,9 @@
         if (matchResults.length === 0) {
             console.log("no matching result");
             matchResults.push("no results");
-        } else if (inputVal == false) {
+        } else if (inputVal.length === 0) {
             console.log("input field empty");
+            resultsContainer.hide();
         }
 
         var htmlForCountries = "";
@@ -35,6 +37,13 @@
         }
         console.log("html we will be injecting:", htmlForCountries);
         resultsContainer.html(htmlForCountries);
+        $("p").on("mouseover", function (e) {
+            console.log("mouse over country!");
+            $(e.target).addClass("highlight");
+        });
+        $("p").off("mouseleave", function (e) {
+            console.log("mouse leaves country");
+        });
     });
 })([
     "Afghanistan",
