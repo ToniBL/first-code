@@ -41,10 +41,22 @@
             console.log("mouse over country!");
             $(e.target).addClass("highlight");
         });
-        $("p").off("mouseleave", function (e) {
+        $("p").on("mouseleave", function (e) {
             console.log("mouse leaves country");
+            $(e.target).removeClass("highlight");
         });
     });
+    resultsContainer.on("mousedown", function (e) {
+        var select = $(e.target).text();
+        searchField.val(select);
+        resultsContainer.hide();
+    });
+
+    // still to add the keydown
+    resultsContainer.on("keydown", function (e){
+        if()
+    })
+
 })([
     "Afghanistan",
     "Albania",
