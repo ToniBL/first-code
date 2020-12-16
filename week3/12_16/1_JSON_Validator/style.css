@@ -1,0 +1,17 @@
+body {
+    background-color: cornflowerblue;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+textarea {
+    margin: 40px;
+}
+
+button {
+    align-self: center;
+}

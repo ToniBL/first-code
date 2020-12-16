@@ -1,0 +1,9 @@
+body {
+    background-color: coral;
+}
+
+.btn {
+    height: 50px;
+    width: 60px;
+    cursor: pointer;
+}
