@@ -1,0 +1,18 @@
+body {
+    background-color: olivedrab;
+}
+.container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+textarea {
+    border: solid orchid 2px;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+}

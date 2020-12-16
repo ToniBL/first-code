@@ -4,6 +4,7 @@
     console.log(button);
 
     var nummern = [
+        "zero",
         "eins",
         "zwei",
         "drei",

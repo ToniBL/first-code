@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    justify-content: first baseline;
     background-color: coral;
 }
 
@@ -6,4 +8,5 @@ body {
     height: 50px;
     width: 60px;
     cursor: pointer;
+    font-weight: bold;
 }

@@ -14,4 +14,6 @@ textarea {
 
 button {
     align-self: center;
+    font-weight: bold;
+    background-color: powderblue;
 }
