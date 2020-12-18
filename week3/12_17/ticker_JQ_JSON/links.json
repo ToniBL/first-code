@@ -1,0 +1,30 @@
+[
+    {
+        "href": "https://spiced.space/adobo/ticker/",
+        "text": "This is an actual ticker"
+    },
+
+    {
+        "href": "https://www.spiced-academy.com/de",
+        "text": "Kickstart your career"
+    },
+
+    {
+        "href": "https://docs.emmet.io/cheat-sheet/",
+        "text": "That's handy shortcuts"
+    },
+    { "href": "https://www.tagesschau.de/", "text": "Tagesschau" },
+    {
+        "href": "https://www.tagesschau.de/inland/",
+        "text": "What's going on in Germany today"
+    },
+    {
+        "href": "https://www.bbc.com/news/uk",
+        "text": "BBC latest"
+    },
+    { "href": "https://edition.cnn.com/politics", "text": "CNN What a story!" },
+    {
+        "href": "https://www.heise.de/developer/",
+        "text": "Developers Update"
+    }
+]
