@@ -3,7 +3,10 @@
     var searchField = $("input");
     var resultsContainer = $(".results");
     console.log("resultsContainer:", resultsContainer);
+    var document = $("document");
+    console.log(document);
 
+    // 1. input event
     searchField.on("input", function () {
         console.log("input done");
         var inputVal = searchField.val().toLowerCase();
@@ -37,6 +40,9 @@
         }
         console.log("html we will be injecting:", htmlForCountries);
         resultsContainer.html(htmlForCountries);
+
+        // 2. mouseover event
+
         $("p").on("mouseover", function (e) {
             console.log("mouse over country!");
             $(e.target).addClass("highlight");
@@ -46,17 +52,20 @@
             $(e.target).removeClass("highlight");
         });
     });
+
+    // 3. mousedown event
     resultsContainer.on("mousedown", function (e) {
         var select = $(e.target).text();
         searchField.val(select);
         resultsContainer.hide();
     });
 
-    // still to add the keydown
-    resultsContainer.on("keydown", function (e){
-        if()
-    })
-
+    // 4. still to add the keydown
+    document.on("keydown", function (e) {
+        if (e.keyCode === 40) {
+            console.log("arrow down");
+        }
+    });
 })([
     "Afghanistan",
     "Albania",

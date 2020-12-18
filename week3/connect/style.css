@@ -1,0 +1,40 @@
+body {
+    box-sizing: border-box;
+    background-color: azure;
+}
+
+.board {
+    border: 3px solid pink;
+    display: flex;
+}
+
+.column {
+    border: 1px solid rgb(34, 83, 78);
+    margin: 0;
+}
+
+.slot {
+    border: 1px solid rgb(34, 83, 78);
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(103, 192, 207);
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid black 1px;
+    background-color: whitesmoke;
+}
+
+.player1 .hole {
+    background-color: yellowgreen;
+}
+
+.player2 .hole {
+    background-color: violet;
+}
