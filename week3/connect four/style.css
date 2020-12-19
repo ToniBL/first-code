@@ -1,39 +1,69 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    background-color: azure;
+    background-color: #fbf6f0;
+}
+
+.title {
+    height: 20%;
+    font-size: 30px;
+    font-weight: bold;
+}
+h1 {
+    align-self: center;
+    font-family: "Bungee Shade", cursive;
+    color: #ffa45b;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    align-self: center;
+    font-family: "Bungee Shade", cursive;
+    font-size: 2.5em;
+    color: #ffa45b;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
 }
 
 .board {
     display: flex;
+    border: solid #ffa45b 3px;
 }
 
 .column {
-    border: 1px solid rgb(34, 83, 78);
     margin: 0;
 }
 
 .slot {
-    border: 1px solid rgb(34, 83, 78);
     height: 100px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(103, 192, 207);
+    background-color: #aee6e6;
 }
 
 .hole {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: solid black 1px;
+    border: solid rgb(67, 115, 133) 1px;
     background-color: whitesmoke;
 }
 
 .player1 .hole {
-    background-color: yellowgreen;
+    background-color: #fff5c0;
 }
 
 .player2 .hole {
-    background-color: violet;
+    background-color: #fdcfdf;
+}
+
+.winner {
+    border: solid #ffa45b 2px;
 }
