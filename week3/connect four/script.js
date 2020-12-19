@@ -2,8 +2,15 @@
     console.log("$: ", $);
     var currentPlayer = "player1";
 
+    var allSlots = $(".slot");
+    //console.log(allSlots);
+
+    var allHoles = $(".hole");
+    //console.log(allHoles);
+
     $(".column").on("click", function (e) {
         var col = $(e.currentTarget);
+        // console.log(col);
 
         var slotsInCol = col.children();
 
@@ -20,20 +27,23 @@
         var slotsInRow = $(".row" + i);
         //console.log(slotsInRow);
 
-        var allSlots = $(".slot");
-        //console.log(allSlots);
-
-        var allHoles = $(".hole");
-        //console.log(allHoles);
-
-        // hier checkDiagonal entfernt
         function checkDiagonal() {
             for (var i = 0; i < allSlots.length - 1; i++)
                 if (
                     allSlots.eq(i).hasClass(currentPlayer) &&
                     allSlots.eq(i + 7).hasClass(currentPlayer) &&
                     allSlots.eq(i + 14).hasClass(currentPlayer) &&
-                    allSlots.eq(i + 21).hasClass(currentPlayer)
+                    allSlots.eq(i + 21).hasClass(currentPlayer) &&
+                    // check for nextafter column
+                    allSlots
+                        .eq(i + 14)
+                        .parent()
+                        .index() ===
+                        allSlots
+                            .eq(i + 21)
+                            .parent()
+                            .index() +
+                            1
                 ) {
                     console.log("diagonal7");
                     setTimeout(function resetGame() {
@@ -44,7 +54,16 @@
                     allSlots.eq(i).hasClass(currentPlayer) &&
                     allSlots.eq(i + 5).hasClass(currentPlayer) &&
                     allSlots.eq(i + 10).hasClass(currentPlayer) &&
-                    allSlots.eq(i + 15).hasClass(currentPlayer)
+                    allSlots.eq(i + 15).hasClass(currentPlayer) &&
+                    // check for same column
+                    allSlots
+                        .eq(i + 10)
+                        .parent()
+                        .index() !==
+                        allSlots
+                            .eq(i + 15)
+                            .parent()
+                            .index()
                 ) {
                     console.log("diagonal5");
                     setTimeout(function resetGame() {
