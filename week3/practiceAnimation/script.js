@@ -10,21 +10,30 @@
 
     var youWin = $(".win");
     console.log(youWin);
-
-    var highlight = "bright";
+    function getRandomColourNumber() {
+        return Math.floor(Math.random() * 256);
+    }
 
     $(".column").on("click", function (e) {
         var col = $(e.currentTarget);
         console.log(col.index());
-
         var slotsInCol = col.children();
-        //function drop chip
-
+        var holeInSlots = slotsInCol.children();
+        var r = getRandomColourNumber();
+        var g = getRandomColourNumber();
+        var b = getRandomColourNumber();
+        console.log("r, g, b: ", r, g, b);
+        var randomColour = "rgb(" + r + "," + g + "," + b + ")";
+        // holeInSlots random cut out
         for (var i = slotsInCol.length - 1; i >= 0; i--) {
             if (
                 !slotsInCol.eq(i).hasClass("player1") &&
                 !slotsInCol.eq(i).hasClass("player2")
             ) {
+                holeInSlots.css({
+                    background: randomColour,
+                });
+
                 slotsInCol.eq(i).addClass(currentPlayer);
                 break;
             }
@@ -41,20 +50,6 @@
                     allSlots.eq(i + 14).hasClass(currentPlayer) &&
                     allSlots.eq(i + 21).hasClass(currentPlayer) &&
                     //check for nextafter column
-                    allSlots.eq(i).parent().index() + 1 ===
-                        allSlots
-                            .eq(i + 7)
-                            .parent()
-                            .index() &&
-                    allSlots
-                        .eq(i + 7)
-                        .parent()
-                        .index() +
-                        1 ===
-                        allSlots
-                            .eq(i + 14)
-                            .parent()
-                            .index() &&
                     allSlots
                         .eq(i + 14)
                         .parent()
@@ -66,16 +61,16 @@
                             .index()
                 ) {
                     console.log("diagonal7");
-                    youWin.css({
-                        visibility: "visible",
-                    });
+                    //youWin.css({
+                    //   visibility: "visible",
+                    // });
 
                     setTimeout(function resetGame() {
                         allSlots.removeClass("player1");
                         allSlots.removeClass("player2");
-                        youWin.css({
-                            visibility: "hidden",
-                        });
+                        // youWin.css({
+                        //   visibility: "hidden",
+                        //  });
                     }, 3000);
                 } else if (
                     allSlots.eq(i).hasClass(currentPlayer) &&
@@ -106,9 +101,9 @@
                             .index()
                 ) {
                     console.log("diagonal5");
-                    youWin.css({
-                        visibility: "visible",
-                    });
+                    // youWin.css({
+                    //     visibility: "visible",
+                    //  });
                     setTimeout(function resetGame() {
                         allSlots.removeClass("player1");
                         allSlots.removeClass("player2");
@@ -121,35 +116,35 @@
 
         if (checkForVictory(slotsInCol)) {
             console.log("column victory!!!!");
-            youWin.css({
-                visibility: "visible",
-            });
-
+            // youWin.css({
+            //     visibility: "visible",
+            //   });
+            youWin.addClass(win);
             setTimeout(function resetGame() {
                 allSlots.removeClass("player1");
                 allSlots.removeClass("player2");
-                youWin.css({
-                    visibility: "hidden",
-                });
+                //  youWin.css({
+                //      visibility: "hidden",
+                //  });
             }, 3000);
         } else if (checkForVictory(slotsInRow)) {
             console.log("row victory!!!!");
-            youWin.css({
-                visibility: "visible",
-            });
+            //  youWin.css({
+            //     visibility: "visible",
+            //  });
             setTimeout(function resetGame() {
                 allSlots.removeClass("player1");
                 allSlots.removeClass("player2");
-                youWin.css({
-                    visibility: "hidden",
-                });
+                //    youWin.css({
+                //       visibility: "hidden",
+                //    });
             }, 4000);
-        } else if (checkDiagonal()) {
-            console.log("diagonal victory!");
-            setTimeout(function resetGame() {
+            /*  } else if (checkDiagonal()) {
+           console.log("diagonal victory!");
+           setTimeout(function resetGame() {
                 allSlots.removeClass("player1");
                 allSlots.removeClass("player2");
-            }, 3000);
+            }, 3000); */
         }
 
         switchPlayer();
