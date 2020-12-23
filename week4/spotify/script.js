@@ -59,15 +59,36 @@
 
                 // We need to check whether there more results before calling replace.
                 // Calling replace on the value null will throw an error!
-                console.log("response.next: ", response.next);
-                var nextUrl =
-                    response.next &&
-                    response.next.replace(
-                        "api.spotify.com/v1/search",
-                        "spicedify.herokuapp.com/spotify"
-                    );
-                console.log("nextUrl: ", nextUrl);
+                // response.next part was here:
+
+               
             },
+
+ $(".more").on("click", function () {
+                    if (response.next === null) {
+                        $(".more").css({ visibilty: "hidden" });
+                    } else {
+                        console.log("response.next: ", response.next);
+                        $(".more").css({ visibilty: "visible" });
+                        var nextUrl =
+                            response.next &&
+                            response.next.replace(
+                                "api.spotify.com/v1/search",
+                                "spicedify.herokuapp.com/spotify"
+                            );
+                        console.log("nextUrl: ", nextUrl);
+                    }
+                    $.ajax({
+                        method: "GET",
+                        url: nextUrl,
+                        data: {
+                            query: userInput,
+                            type: artistOrAlbum,
+                        },
+                    });
+                });
+
+            
         });
     });
 })();

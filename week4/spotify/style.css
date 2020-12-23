@@ -3,6 +3,7 @@ body {
     background-color: #f8f1f1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: "Bangers", cursive;
 }
 
@@ -34,7 +35,7 @@ header {
 .artist-album {
     width: 150px;
     height: 150px;
-    border: solid  #03506f 2px;
+    border: solid #03506f 2px;
 }
 
 .results-container {
@@ -47,7 +48,16 @@ header {
 .resultsFor {
     align-self: center;
     justify-self: center;
-    color:
+    color: #0a043c;
     font-size: 2em;
     margin: 20px;
+}
+
+.more {
+    align-self: center;
+    justify-self: center;
+    color: #f8f1f1;
+    font-size: 1.5em;
+    margin: 20px;
+    background-color: #03506f;
 }
