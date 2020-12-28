@@ -6,17 +6,22 @@
     var artistOrAlbum;
 
     $(".submit-button").on("click", search);
-    /*  $("search-fields").on("keydown", function (e) {
+    $(".search-fields").on("keydown", function (e) {
         if (e.which === 13) {
             search();
         }
-    });*/
+    });
     $(".more").on("click", moreBtn);
 
     function search() {
+        resultsHtml = "";
+        $(".results-container").html(resultsHtml);
+        //$(".results-container").html(resultsHtml)
+        //$(".results-container").empty();
         userInput = $("input").val();
         artistOrAlbum = $("select").val();
         console.log("user data: ", userInput, " - ", artistOrAlbum);
+
         $.ajax({
             method: "GET",
             url: "https://spicedify.herokuapp.com/spotify",
@@ -35,7 +40,7 @@
         if (response.items.length === 0) {
             console.log("no results");
             resultsHtml = "<div>" + "no results" + "</div>";
-            resultsForHtml = "<div>" + "no results" + "</div>";
+            $(".results-container").html(resultsHtml);
         } else {
             for (var i = 0; i < response.items.length; i++) {
                 var defaultImage =
@@ -61,13 +66,11 @@
                     "</a>" +
                     "'>" +
                     "</div>";
-                resultsForHtml =
-                    "<div>" + "Results for" + " " + userInput + " </div>";
 
-                $(".resultsFor").html(resultsForHtml);
                 $(".results-container").html(resultsHtml);
             }
         }
+
         // We need to check whether there more results before calling replace.
         if (response.next) {
             nextUrl =
@@ -76,8 +79,14 @@
                     "api.spotify.com/v1/search",
                     "spicedify.herokuapp.com/spotify"
                 );
-            console.log("nextUrl: ", nextUrl);
+            $(".more").css({ visibility: "visible" });
+        } else {
+            $(".more").css({ visibility: "hidden" });
         }
+
+        resultsForHtml = "<div>" + "Results for" + " " + userInput + " </div>";
+
+        $(".resultsFor").html(resultsForHtml);
     }
     // new ajax for more-btn here
     // new ajax needs to override nextURL each time and then call displayResults
