@@ -76,14 +76,18 @@
                         youWin.css({
                             visibility: "hidden",
                         });
-                    }, 3000);
+                    }, 2000);
                 } else if (
                     allSlots.eq(i).hasClass(currentPlayer) &&
                     allSlots.eq(i + 5).hasClass(currentPlayer) &&
                     allSlots.eq(i + 10).hasClass(currentPlayer) &&
-                    allSlots.eq(i + 15).hasClass(currentPlayer) &&
+                    allSlots
+                        .eq(i + 15)
+                        .hasClass(
+                            currentPlayer
+                        ) /*&&
                     // check for same column
-                    allSlots.eq(i).parent().index() !==
+                      allSlots.eq(i).parent().index() !==
                         allSlots
                             .eq(i + 5)
                             .parent()
@@ -103,7 +107,7 @@
                         allSlots
                             .eq(i + 15)
                             .parent()
-                            .index()
+                            .index()*/
                 ) {
                     console.log("diagonal5");
                     youWin.css({
@@ -115,7 +119,7 @@
                         youWin.css({
                             visibility: "hidden",
                         });
-                    }, 3000);
+                    }, 2000);
                 }
         }
 
@@ -131,7 +135,7 @@
                 youWin.css({
                     visibility: "hidden",
                 });
-            }, 3000);
+            }, 2000);
         } else if (checkForVictory(slotsInRow)) {
             console.log("row victory!!!!");
             youWin.css({
@@ -143,13 +147,13 @@
                 youWin.css({
                     visibility: "hidden",
                 });
-            }, 4000);
+            }, 2000);
         } else if (checkDiagonal()) {
             console.log("diagonal victory!");
             setTimeout(function resetGame() {
                 allSlots.removeClass("player1");
                 allSlots.removeClass("player2");
-            }, 3000);
+            }, 2000);
         }
 
         switchPlayer();
