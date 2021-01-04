@@ -4,6 +4,9 @@
     var nextUrl; // refresh ajax for more-btn with new nextUrl each time more is clicked
     var userInput;
     var artistOrAlbum;
+    var useInfinte = location.search.indexOf("scroll=infinite") > -1;
+    console.log(useInfinte);
+    $(".more").hide();
 
     $(".submit-button").on("click", search);
     $(".search-fields").on("keydown", function (e) {
@@ -79,16 +82,30 @@
                     "api.spotify.com/v1/search",
                     "spicedify.herokuapp.com/spotify"
                 );
-            $(".more").css({ visibility: "visible" });
+            $(".more").show();
         } else {
-            $(".more").css({ visibility: "hidden" });
+            $(".more").hide();
+        }
+
+        if (response.next && useInfinte) {
+            checkScrollDown();
+            $(".more").hide();
         }
 
         resultsForHtml = "<div>" + "Results for" + " " + userInput + " </div>";
 
         $(".resultsFor").html(resultsForHtml);
     }
-    // new ajax for more-btn here
+    function checkScrollDown() {
+        hasScrolledDown =
+            $(document).height() - 100 <=
+            $(window).height() + $(document).scrollTop();
+        if (hasScrolledDown === true) {
+            moreBtn();
+        } else {
+            setTimeout(checkScrollDown, 0.5);
+        }
+    } // new ajax for more-btn here
     // new ajax needs to override nextURL each time and then call displayResults
     function moreBtn() {
         console.log("nextUrl: ", nextUrl);
