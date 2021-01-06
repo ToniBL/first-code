@@ -10,11 +10,11 @@ const rl = readline.createInterface({
 
 const story = {
     q:
-        "You are freezing your ass off in the Berghain que since 2 hours. Do you dare to skip the line and sneak in infront?",
+        "You are freezing your ass off in the Berghain que since 2 hours. Do you dare to skip the line and sneak in infront? ",
     answers: {
         yes: {
             q:
-                "This saved you another hour of queing but gave you minus 100 karma-points. And you still haven't entered the temple of techno. Can you play it cool and hold the bouncers stare?",
+                "This saved you another hour of queing but gave you minus 100 karma-points. And you still haven't entered the temple of techno. Can you play it cool and hold the bouncers stare? ",
             answers: {
                 yes: {
                     q:
