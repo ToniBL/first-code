@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    background-color: #fbf6f0;
+}
+
+.title {
+    height: 20%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+h1 {
+    margin: 0 0 0 3rem;
+    align-self: center;
+    font-family: "Bungee Shade", cursive;
+    color: #ffa45b;
+    animation: moveH1 3s ease-out;
+}
+
+@keyframes moveH1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    80% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        opactity: 1;
+        transform: translate(0) rotate(360deg);
+    }
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.win {
+    align-self: center;
+    font-family: "Bungee Shade", cursive;
+    font-size: 2.5em;
+    color: #ffa45b;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+.board {
+    display: flex;
+    flex-direction: row;
+    border: solid #ffa45b 4px;
+    border-radius: 3%;
+    margin: 0 0 0 3rem;
+    animation: moveBoard 3s ease-in;
+    z-index: 1000;
+    background-color: #aee6e6;
+}
+
+.score {
+    flex-basis: 20%;
+    background-color: #ffa45b;
+    font-family: "Bungee Shade", cursive;
+    font-size: 2em;
+    text-align: center;
+    color: whitesmoke;
+    margin: 3rem;
+    border: solid #aee6e6 4px;
+    border-radius: 3%;
+}
+
+@keyframes moveBoard {
+    0% {
+        transform: translateY(-200px);
+    }
+    30% {
+        transform: translateY(200px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    90% {
+        transform: translateY(-50);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.column {
+    margin: 0;
+}
+
+.slot {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aee6e6;
+    border-radius: 16px;
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid rgb(67, 115, 133) 1px;
+    background-color: whitesmoke;
+}
+
+.player1 .hole {
+    background-color: #fff5c0;
+}
+
+.player2 .hole {
+    background-color: #fdcfdf;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+            rel="stylesheet"
+        />
+        <title>Spotify Search</title>
+    </head>
+    <body>
+        <header><h1>Find your favourite Music!</h1></header>
+        <div class="search-fields">
+            <input type="text" />
+            <select>
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+            </select>
+        </div>
+        <div class="submit-button"><button>Submit</button></div>
+        <script id="spotify" type="text/x-handlebars-template">
+            <div class="resultsFor"></div>
+            <div class="results-container">
+                <p>
+                    <a href=" "></a>
+                </p>
+                {{resultsHtml}}
+            </div>
+            <div>
+                <button class="more">
+                    more
+                </button>
+            </div>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
