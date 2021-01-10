@@ -33,8 +33,6 @@ const server = http.createServer(function (req, res) {
 </html>`);
         res.end();
     } else if (req.method === "POST") {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "text/html");
         let body = "";
         req.on("data", (chunk) => {
             body += chunk;
@@ -45,11 +43,13 @@ const server = http.createServer(function (req, res) {
             let { color, text } = str;
             console.log(color);
             console.log(chalk[color](text));
-            res.write(`<!doctype html>
-<html>
-<title>${text}</title>
-<a href="/" style="color:${color}>${text}</a>
-</html>`);
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.write(`
+            <!doctype html>
+            <html>
+            <title>${text}</title>
+            <a href="/" style="color: ${color}">${text}</a>
+            `);
             res.end();
         });
     } else {
