@@ -1,19 +1,33 @@
 const http = require("http");
+const fs = require("fs");
 
 const server = http.createServer(function (request, response) {
     request.on("error", (error) => {
         console.log("error on request obj:", error);
     });
+    console.log(request);
     console.log("request.headers: ", request.headers);
     console.log("request.url: ", request.url);
     console.log("request.method: ", request.method); // request Body
+    fs.appendFile(
+        "requests.txt",
+        `${new Date()} \t ${request.method} \t ${request.url} \t ${
+            request.headers["user-agent"]
+        }\n`,
+        (error) => {
+            if (error) {
+                console.log("error in txt:", error);
+            }
+        }
+    );
+
     let body = "";
     request
         .on("data", (chunk) => {
             body += chunk;
         })
         .on("end", () => {
-            console.log("request body:", body);
+            //      console.log("request body:", body);
         });
     // End of request
 
