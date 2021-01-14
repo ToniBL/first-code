@@ -1,0 +1,22 @@
+
+
+<section class="container">
+    <div class="my_project_list">
+        <h2>My Projects</h2>
+        {{> projList description=true}}
+    </div>
+
+    <div class="project_display">
+        {{#selectProject}}
+        <h1>{{projName}}</h1>
+        <img class="img_project" src={{dirName}}/screenshot.png>
+        <p>{{description}}</p>
+        <a href="{{dirName}}" target="_blank"></a>
+        {{/selectProject}}
+    </div>
+</section>
+
+
+
+
+

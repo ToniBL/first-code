@@ -1,10 +1,17 @@
 [
     {
         "projName": "Connect Four",
-        "dirName": "connect_four"
+        "dirName": "connect_four",
+        "description": "A game classic with retro look and feel"
     },
     {
         "projName": "Spotify Search",
-        "dirName": "spotify"
+        "dirName": "spotify",
+        "description": "An API to popular music-search-maschine"
+    },
+    {
+        "projName": "Panes",
+        "dirName": "pane",
+        "description": "I so which it was working... Oneday I'll come back to fix this!"
     }
 ]

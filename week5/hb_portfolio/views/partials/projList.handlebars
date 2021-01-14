@@ -1,0 +1,44 @@
+
+<div {{#if welcome}} class="main">{{/if}}
+   
+{{!--
+{{#projects}}
+ {{#if ../welcome}}<div class="each_project">
+     {{#if ../welcome}} <div class="title"> <a href= "/{{dirName}}">{{projName}}:</a> </div> {{/if}}
+      {{#if ../description}}  <div class="title"> <a href= "/{{dirName}}">{{projName}}:</a> </div> {{/if}}
+     {{#if ../welcome}}  <div class="image">  <a href="/{{dirName}}"> <img src={{dirName}}/screenshot.png> </a> </div> {{/if}}
+     {{#if ../welcome}} <div class="teaser"> {{description}}</div>{{/if}}
+</div>{{/if}}
+{{/projects}}
+</div>
+--}}
+
+{{#projects}}
+    {{#if ../welcome}} 
+        <div class="each_project">
+            <div class="title"> 
+                <a href= "/{{dirName}}">{{projName}}:</a> 
+            </div>
+            <div class="image">  
+                <a href="/{{dirName}}"> 
+                <img src={{dirName}}/screenshot.png></a> 
+            </div> 
+            <div class="teaser"> {{description}}</div>
+        </div>
+    {{/if}}
+    {{#if ../description}}
+    <div class="list">
+        <a href= "/{{dirName}}">{{projName}}</a> 
+    </div>
+    {{/if}}
+{{/projects}}
+</div>
+
+
+
+
+{{! here loop over selectProject obj  
+then access properties like img in templates }}
+    
+        
+
