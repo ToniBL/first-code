@@ -21,8 +21,8 @@ app.get("/data.json", () => {
             }
             // console.log("tweets:", tweets);
             //filter & sort tweets
-            const tickerOutput = filterTweets(tweets);
-            response.json(tickerOutput);
+            const tweetToPublish = filterTweets(tweets);
+            response.json(tweetToPublish);
         });
     });
 });

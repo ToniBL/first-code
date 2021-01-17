@@ -73,6 +73,7 @@ module.exports.getTweets = function (bearerToken, callback) {
     // move on to filtering tweets and form them to array -> synchronous, no callback!
 };
 module.exports.filterTweets = function (tweets) {
+    let tweetToPublish = [];
     for (let i = 0; i < tweets.length; i++) {
         let tweetTexts = tweets[i].full_text;
         let url = tweets[i].entities.urls;
@@ -83,22 +84,21 @@ module.exports.filterTweets = function (tweets) {
         //console.log("media:", media);
 
         if (tweets[i].entities.urls.length == 1) {
-            // console.log(tweets[i].full_text);
+            //console.log(tweets[i].full_text);
             //console.log(tweets[i].entities.urls[0].url);
             let splitTweet = tweets[i].full_text.split("https");
             // console.log("splitTweet:", splitTweet);
             let finalTweetText = splitTweet[0];
             //console.log(finalTweetText);
-            let tweetToPublish = [
-                {
-                    text: finalTweetText,
-                    url: tweets[i].entities.urls[0].url,
-                },
-            ];
+
+            tweetToPublish.push({
+                text: finalTweetText,
+                url: tweets[i].entities.urls[0].url,
+            });
             console.log(tweetToPublish);
-            return tweetToPublish;
         }
     }
+    return tweetToPublish;
 };
 
 //  map, forEach or filter
