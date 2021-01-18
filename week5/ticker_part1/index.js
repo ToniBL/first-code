@@ -5,7 +5,7 @@ const { getToken, getTweets, filterTweets } = require("./twitter"); // this give
 
 app.use(express.static("./ticker"));
 
-app.get("/data.json", () => {
+app.get("/data.json", (req, res) => {
     console.log("request for Data.json was made");
     getToken((err, bearerToken) => {
         if (err) {
@@ -22,7 +22,7 @@ app.get("/data.json", () => {
             // console.log("tweets:", tweets);
             //filter & sort tweets
             const tweetToPublish = filterTweets(tweets);
-            response.json(tweetToPublish);
+            res.json(tweetToPublish);
         });
     });
 });
