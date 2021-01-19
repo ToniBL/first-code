@@ -1,0 +1,38 @@
+{
+    "README.md": 12,
+    "README.md:Zone.Identifier": 0,
+    "part1": {
+        "a": {
+            "images": {
+                "cats.png": 573350,
+                "cats.png:Zone.Identifier": 0,
+                "kitty1_150x150.jpg": 9279,
+                "kitty1_150x150.jpg:Zone.Identifier": 0,
+                "kitty2_150x150.jpg": 14355,
+                "kitty2_150x150.jpg:Zone.Identifier": 0,
+                "kitty3_150x150.jpg": 13387,
+                "kitty3_150x150.jpg:Zone.Identifier": 0
+            },
+            "index.html": 241,
+            "index.html:Zone.Identifier": 0,
+            "stylesheet.css": 40,
+            "stylesheet.css:Zone.Identifier": 0
+        },
+        "b": {
+            "images": {
+                "boxes.png": 156804,
+                "boxes.png:Zone.Identifier": 0
+            },
+            "index.html": 243,
+            "index.html:Zone.Identifier": 0,
+            "stylesheet.css": 39,
+            "stylesheet.css:Zone.Identifier": 0
+        }
+    },
+    "part2": {
+        "index.html": 160,
+        "index.html:Zone.Identifier": 0,
+        "script.js": 1998,
+        "script.js:Zone.Identifier": 0
+    }
+}

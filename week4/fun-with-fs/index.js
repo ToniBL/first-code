@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const myPath = `${__dirname}/files`;
 //console.log(myPath);
-/*
+
 function logSizes(myPath) {
     fs.readdir(myPath, { withFileTypes: true }, (err, data) => {
         if (err) {
@@ -35,9 +35,9 @@ function logSizes(myPath) {
     });
 }
 logSizes(myPath);
-*/
-// excercise 2
 
+// excercise 2
+/*
 function mapSizes(myPath) {
     let data = fs.readdirSync(myPath, { withFileTypes: true });
     // console.log(data);
@@ -67,3 +67,4 @@ console.log("newObj:", newObj);
 JSON.stringify(newObj);
 
 fs.writeFileSync(myPath + "/file.json", JSON.stringify(newObj, null, 4));
+*/
