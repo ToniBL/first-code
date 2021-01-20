@@ -1,5 +1,5 @@
 // ToDo: - link from welcome page to project-description
-//- img in project description
+//- img in project description -> projects folder and const projects (Json) have the same mane, maybe that's the problem
 //- launch botton on description page
 
 const express = require("express");

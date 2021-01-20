@@ -4,6 +4,11 @@
 const https = require("https");
 const { twitterKey, twitterSecret } = require("./secrets");
 
+// //promisify
+// const { promisify } = require("util");
+// const getToken = promisify(getToken);
+// getToken(bearerToken).then((req.end))
+
 module.exports.getToken = function (callback) {
     // requesting token from  twitter; asynch prozess ->  callback! before moving on
     const creds = `${twitterKey}:${twitterSecret}`;
@@ -83,7 +88,7 @@ module.exports.filterTweets = function (tweets) {
         //console.log("url:", url);
         //console.log("media:", media);
 
-        if (tweets[i].entities.urls.length == 1) {
+        if (tweets[i].entities.urls.length === 1) {
             //console.log(tweets[i].full_text);
             //console.log(tweets[i].entities.urls[0].url);
             let splitTweet = tweets[i].full_text.split("https");
