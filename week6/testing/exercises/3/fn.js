@@ -7,8 +7,8 @@ module.exports = function fn(arg1) {
         return null;
     }
     if (Array.isArray(arg1)) {
-        newArrg = arrg1[0].split("").reverse().join("");
-        arrg1[1] = null;
-        return [newArrg, arrg1[1]];
+        newArrg = arg1[0].split("").reverse().join("");
+        arg1[1] = null;
+        return [newArrg, arg1[1]];
     }
 };
